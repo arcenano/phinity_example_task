@@ -11,6 +11,7 @@ async def test_addition(dut):
     dut.a.value = 5
     dut.b.value = 3
     await RisingEdge(dut.clk)
+    await RisingEdge(dut.clk)
     assert dut.sum.value == 8, f"Expected 8, got {dut.sum.value}"
 
 # ⚠️ CRITICAL: Every test needs this pytest wrapper
